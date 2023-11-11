@@ -51,12 +51,15 @@ RUN	adduser --disabled-login \
 RUN	mkdir -p ${STEAMCMDDIR} ${HOMEDIR} ${STEAMAPPDIR} /Config /Logs /Scripts /Headless/Data /Headless/Data/Cache /Headless/Data/Assets /Headless/RuntimeData && \
 	cd ${STEAMCMDDIR} && \
 	curl -sqL ${STEAMCMDURL} | tar zxfv - && \
-	chown -R ${USER}:${USER} ${STEAMCMDDIR} ${HOMEDIR} ${STEAMAPPDIR} /Config /Logs
+	chown -R ${USER}:${USER} ${STEAMCMDDIR} ${HOMEDIR} ${STEAMAPPDIR} /Config /Logs /Scripts
 
 COPY	./setup_resonite.sh ./start_resonite.sh /Scripts
 
 RUN	chown -R ${USER}:${USER} /Scripts/setup_resonite.sh /Scripts/start_resonite.sh && \
 	chmod +x /Scripts/setup_resonite.sh /Scripts/start_resonite.sh
+
+# TwitchLib hotfix
+COPY    ./TwitchLib.Communication.dll /Scripts
 
 # Switch to user
 USER ${USER}

@@ -7,6 +7,8 @@ bash "${STEAMCMDDIR}/steamcmd.sh" \
     +app_update ${STEAMAPPID} -beta ${STEAMBETA} -betapassword ${STEAMBETAPASSWORD} validate \
     +quit
 
+mv /Scripts/TwitchLib.Communication.dll ${STEAMAPPDIR}/Headless/TwitchLib.Communication.dll # TwitchLib hotfix
+
 if [ "$CLEANASSETS" = true ]; then
     find ${STEAMAPPDIR}/Headless/Data/Assets -type f -atime +7 -delete
     find ${STEAMAPPDIR}/Headless/Data/Cache -type f -atime +7 -delete
