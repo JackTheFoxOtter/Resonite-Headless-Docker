@@ -58,9 +58,6 @@ COPY	./setup_resonite.sh ./start_resonite.sh /Scripts
 RUN	chown -R ${USER}:${USER} /Scripts/setup_resonite.sh /Scripts/start_resonite.sh && \
 	chmod +x /Scripts/setup_resonite.sh /Scripts/start_resonite.sh
 
-# TwitchLib hotfix
-COPY    ./TwitchLib.Communication.dll /Scripts
-
 # Switch to user
 USER ${USER}
 

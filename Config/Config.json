@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Yellow-Dog-Man/JSONSchemas/main/schemas/HeadlessConfig.schema.json",
+  "universeId": null,
+  "tickRate": 60.0,
+  "maxConcurrentAssetTransfers": 4,
+  "usernameOverride": null,
+  "loginCredential": "jackthefoxotter+jackless@gmail.com",
+  "loginPassword": "HTu6HUw@3*jnfMJAkZRWGdiAZfv8WsSRYKMKeoXVN%C%FcCx&NV^aUuc$RNkbSyn",
+  "startWorlds": [
+    {
+      "isEnabled": true,
+      "sessionName": "Jack's Headless Session",
+      "customSessionId": null,
+      "description": "Configured and hosted by JackTheFoxOtter",
+      "maxUsers": 8,
+      "accessLevel": "Contacts",
+      "useCustomJoinVerifier": false,
+      "hideFromPublicListing": null,
+      "tags": null,
+      "mobileFriendly": false,
+      "loadWorldURL": null,
+      "loadWorldPresetName": "Grid",
+      "overrideCorrespondingWorldId": null,
+      "forcePort": null,
+      "keepOriginalRoles": false,
+      "defaultUserRoles": null,
+      "roleCloudVariable": null,
+      "allowUserCloudVariable": null,
+      "denyUserCloudVariable": null,
+      "requiredUserJoinCloudVariable": null,
+      "requiredUserJoinCloudVariableDenyMessage": null,
+      "awayKickMinutes": -1.0,
+      "parentSessionIds": null,
+      "autoInviteUsernames": [ 
+        "JackTheFoxOtter" 
+      ],
+      "autoInviteMessage": "Server booted!",
+      "saveAsOwner": null,
+      "autoRecover": true,
+      "idleRestartInterval": -1.0,
+      "forcedRestartInterval": -1.0,
+      "saveOnExit": false,
+      "autosaveInterval": -1.0,
+      "autoSleep": true
+    }
+  ],
+  "dataFolder": null,
+  "cacheFolder": null,
+  "logsFolder": null,
+  "allowedUrlHosts": null,
+  "autoSpawnItems": null
+}
