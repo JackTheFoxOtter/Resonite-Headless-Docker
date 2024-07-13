@@ -1,6 +1,5 @@
-version: "3.9"
 services:
-  headlesscore:
+  headless:
     build:
       args:
        - HOSTUSERID=${HOSTUSERID:-1000}
