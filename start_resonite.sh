@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd ${STEAMAPPDIR}/Headless/net8.0
+cd ${STEAMAPPDIR}/Headless
 exec dotnet Resonite.dll -HeadlessConfig /Config/Config.json -l /Logs
