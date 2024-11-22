@@ -1,10 +1,23 @@
 #!/bin/sh
 
+if [ -n "${STEAMBETA}" ]; then
+    if [ -n "${STEAMBETAPASSWORD}" ]; then
+        # Beta + password
+        BETA_ARGS="-beta ${STEAMBETA} -betapassword ${STEAMBETAPASSWORD}"
+    else
+        # Beta without password
+        BETA_ARGS="-beta ${STEAMBETA}"
+    fi
+else
+    # No beta
+    BETA_ARGS=""
+fi
+
 bash "${STEAMCMDDIR}/steamcmd.sh" \
     +force_install_dir ${STEAMAPPDIR} \
     +login ${STEAMLOGIN} \
     +app_license_request ${STEAMAPPID} \
-    +app_update ${STEAMAPPID} -beta ${STEAMBETA} -betapassword ${STEAMBETAPASSWORD} validate \
+    +app_update ${STEAMAPPID} ${BETA_ARGS} validate \
     +quit
 
 if [ "$CLEANASSETS" = true ]; then
