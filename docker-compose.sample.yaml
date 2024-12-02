@@ -1,6 +1,8 @@
 services:
-  headless:
+  resonite-headless:
+    container_name: resonite-headless # Change the name to anything you like
     build:
+      context: https://github.com/JackTheFoxOtter/resonite-headless-docker.git#main # This will automatically pull & build the container from the "main" branch of my repository
       args:
        - HOSTUSERID=${HOSTUSERID:-1000}
        - HOSTGROUPID=${HOSTGROUPID:-1000}
@@ -8,12 +10,13 @@ services:
     stdin_open: true
     environment:
       - STEAMBETA=${STEAMBETA}
+      - STEAMBETAPASSWORD=${STEAMBETAPASSWORD}
       - STEAMLOGIN=${STEAMLOGIN}
       - CLEANASSETS=${CLEANASSETS:-true}
       - CLEANLOGS=${CLEANLOGS:-true}
     volumes:
       - "./Config:/Config"
       - "./Logs:/Logs"
-      - "/etc/timezone:/etc/timezone:ro"
-      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro" # Only for Linux host
+      - "/etc/localtime:/etc/localtime:ro" # Only for Linux host
     restart: unless-stopped
